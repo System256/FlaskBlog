@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Все статьи
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Все статьи</h1>
+
+    {% if articles|length > 0 %}
+        {% for el in articles %}
+        <div class="card article">
+            <h5 class="card-header">
+                {{ el.title }}
+            </h5>
+            <div class="card-body">
+                <p class="card-text">{{ el.intro }}</p>
+            </div>
+            <div class="card-footer text-muted">
+            Дата: {{ el.date.date() }}
+                <a href="/posts/{{ el.id }}" class="btn btn-primary">Подробнее</a>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+    <p>Нет статей на данный момент</p>
+    {% endif %}
+</div>
+{% endblock %}

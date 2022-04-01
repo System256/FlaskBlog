@@ -1,0 +1,9 @@
+.container {
+    max-width: 1200px;
+}
+.article {
+    margin-bottom: 30px;
+}
+.navbar a, a:hover, a:active {
+    color: black;
+}
