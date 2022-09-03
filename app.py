@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for, request, redirect, send_file
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from flask_cors import CORS
+import json
 
 
 app = Flask(__name__)
@@ -92,6 +93,12 @@ def create_article():
             return 'При добавлении статьи произошла ошибка'
     else:
         return render_template('create_article.html')
+
+
+@app.route('/test_json')
+def test_json():
+    data = [i for i in range(0, 10)]
+    return render_template('test_json.html', data=json.dumps(data))
 
 
 if __name__ == '__main__':
