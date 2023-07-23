@@ -34,20 +34,23 @@
                             <a class="nav-link" aria-current="page" href="/">Главная</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/posts">Статьи</a>
+                            <a class="nav-link" href="{{ url_for('posts') }}">Статьи</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/about">О сайте</a>
+                            <a class="nav-link" href="{{ url_for('about') }}">О сайте</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-warning" href="/create-article">Добавить</a>
+                            <a class="nav-link btn btn-warning" href="{{ url_for('add_post') }}">Добавить</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Сервисы
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">ЛК
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li>
-                                    <a class="dropdown-item" href="#">Первый сервис</a>
+                                    <a class="dropdown-item" href="#">Вход</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Регистрация</a>
                                 </li>
                             </ul>
                         </li>
@@ -66,63 +69,6 @@
             <div class="col-12 col-md">
                 <small class="d-block mb-3 text-muted">©2022</small>
             </div>
-            <!--<div class="col-6 col-md">
-                <h5>Features</h5>
-                <ul class="list-unstyled text-small">
-                    <li class="mb-1">
-                        <a class="link-secondary text-decoration-none" href="#">Cool stuff</a>
-                    </li>
-                    <li class="mb-1">
-                        <a class="link-secondary text-decoration-none" href="#">Random feature</a>
-                    </li>
-                    <li class="mb-1">
-                        <a class="link-secondary text-decoration-none" href="#">Team feature</a>
-                    </li>
-                    <li class="mb-1">
-                        <a class="link-secondary text-decoration-none" href="#">Stuff for developers</a>
-                    </li>
-                    <li class="mb-1">
-                        <a class="link-secondary text-decoration-none" href="#">Another one</a>
-                    </li>
-                    <li class="mb-1">
-                        <a class="link-secondary text-decoration-none" href="#">Last time</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>Resources</h5>
-                <ul class="list-unstyled text-small">
-                    <li class="mb-1">
-                        <a class="link-secondary text-decoration-none" href="#">Resource</a>
-                    </li>
-                    <li class="mb-1">
-                        <a class="link-secondary text-decoration-none" href="#">Resource name</a>
-                    </li>
-                    <li class="mb-1">
-                        <a class="link-secondary text-decoration-none" href="#">Another resource</a>
-                    </li>
-                    <li class="mb-1">
-                        <a class="link-secondary text-decoration-none" href="#">Final resource</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>About</h5>
-                <ul class="list-unstyled text-small">
-                    <li class="mb-1">
-                        <a class="link-secondary text-decoration-none" href="#">Team</a>
-                    </li>
-                    <li class="mb-1">
-                        <a class="link-secondary text-decoration-none" href="#">Locations</a>
-                    </li>
-                    <li class="mb-1">
-                        <a class="link-secondary text-decoration-none" href="#">Privacy</a>
-                    </li>
-                    <li class="mb-1">
-                        <a class="link-secondary text-decoration-none" href="#">Terms</a>
-                    </li>
-                </ul>
-            </div>-->
         </div>
     </footer>
 </div>

@@ -1,12 +1,10 @@
 from flask import Flask, render_template, url_for, request, redirect, send_file
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-from flask_cors import CORS
 import json
 
 
 app = Flask(__name__)
-CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
@@ -47,7 +45,7 @@ def post_detail(id):
     return render_template('post_detail.html', article=article)
 
 
-@app.route('/posts/<int:id>/delete')
+@app.route('/posts/delete/<int:id>')
 def post_delete(id):
     article = Article.query.get_or_404(id)
 
@@ -59,7 +57,7 @@ def post_delete(id):
         return 'При удалении статьи произошла ошибка'
 
 
-@app.route('/posts/<int:id>/update', methods=['POST', 'GET'])
+@app.route('/posts/update/<int:id>', methods=['POST', 'GET'])
 def post_update(id):
     article = Article.query.get(id)
     if request.method == 'POST':
@@ -76,8 +74,8 @@ def post_update(id):
         return render_template('post_update.html', article=article)
 
 
-@app.route('/create-article', methods=['POST', 'GET'])
-def create_article():
+@app.route('/posts/add', methods=['POST', 'GET'])
+def add_post():
     if request.method == 'POST':
         title = request.form['title']
         intro = request.form['intro']
