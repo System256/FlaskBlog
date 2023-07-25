@@ -14,7 +14,7 @@
             <p class="card-text">{{ article.text }}</p>
         </div>
         <div class="card-footer text-muted">
-            Дата: {{ article.date.date() }}
+            Дата публикации: {{ article.date.date() }}
             <a href="/posts/edit/{{ article.id }}" class="btn btn-success">Редактировать</a>
             <a href="/posts/delete/{{ article.id }}" class="btn btn-danger">Удалить</a>
         </div>
